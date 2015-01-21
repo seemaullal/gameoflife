@@ -108,7 +108,7 @@ GameOfLife.prototype.reset = function() {
   this.clear();
   cells = document.getElementsByTagName("TD");
   for (var i=0; i<cells.length; i++) {
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.33) {
        cells[i].className = "alive";
        cells[i].setAttribute('data-status', 'alive');
     }

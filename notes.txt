@@ -1,0 +1,35 @@
+table cell element is document.getElementById('board').rows[y].cells[x]
+
+if the cell is rows[6]cells[8] then id= 8-6
+	neighbors = 9 "surrounding elements"
+id= 7-5 8-5 9-5
+	7-6 el  9-6
+	7-7 8-7 9-7
+
+i.e. for id y-x (row x col y) the neighbor ids are (y-1)-(x-1), y-(x-1)
+, (y+1)-(x-1) , (y-1)-x, (y+1)-x, (y-1)-(x+1), y-(x+1), (y+1)-(x+1)
+
+
+id = x,y
+for (i= x-1 to x+1) 0 2
+	for ( j =y-1,y+1)  0 2
+		if  i=x and j=y ignore
+		if i<0 or j<0 ignore
+		if i=this.height or j=this.width ignore
+
+x=1 and y=1
+
+
+
+for (i=-1 to 1)
+	for j= -1 to 1 ignore
+		i = -1 j=-1 ignore
+		i= -1 j=0 ignore 
+		i=-1 j=1 ignore
+		i=0 j= -1 ignore
+		i=0 j=0 ignore
+		i=0 j=1  document.getElementById(i + "-" + j)
+		i=1 j=-1 ignore
+		i=1 j=0
+		i=1 j=1
+
