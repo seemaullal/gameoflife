@@ -158,6 +158,6 @@ GameOfLife.prototype.enableAutoPlay = function () {
   } 
 };
 
-var gol = new GameOfLife(20,20);
+var gol = new GameOfLife(40,40);
 gol.createAndShowBoard();
 // console.log(gol.getNeighborStatus("19-19"));
