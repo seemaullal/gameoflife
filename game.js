@@ -104,7 +104,16 @@ GameOfLife.prototype.step = function () {
 
 }
 
-GameOfLife.prototype.reset
+GameOfLife.prototype.reset = function() {
+  this.clear();
+  cells = document.getElementsByTagName("TD");
+  for (var i=0; i<cells.length; i++) {
+    if (Math.random() < 0.5) {
+       cells[i].className = "alive";
+       cells[i].setAttribute('data-status', 'alive');
+    }
+  }
+}
 
 GameOfLife.prototype.clear = function() {
   document.getElementById("autoplay").innerHTML = "Play";
