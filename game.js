@@ -1,3 +1,12 @@
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 function GameOfLife(width,height) {
  this.width = width;
  this.height = height;
@@ -38,9 +47,11 @@ GameOfLife.prototype.setupBoardEvents = function() {
    if (this.getAttribute('data-status') == 'dead') {
      this.className = "alive";
      this.setAttribute('data-status', 'alive');
+     this.style.backgroundColor = getRandomColor();
    } else {
      this.className = "dead";
      this.setAttribute('data-status', 'dead');
+     this.style.backgroundColor = "white";
    }
  };
  
@@ -94,10 +105,12 @@ GameOfLife.prototype.step = function () {
       if (cells[i].getAttribute('data-status') == 'dead') {
         cells[i].className = "alive";
         cells[i].setAttribute('data-status', 'alive');
+        cells[i].style.backgroundColor =  getRandomColor();
       } 
       else {
         cells[i].className = "dead";
         cells[i].setAttribute('data-status', 'dead');
+        cells[i].style.backgroundColor = "white";
       }
     }
   }
@@ -108,9 +121,10 @@ GameOfLife.prototype.reset = function() {
   this.clear();
   cells = document.getElementsByTagName("TD");
   for (var i=0; i<cells.length; i++) {
-    if (Math.random() < 0.33) {
+    if (Math.random() < 0.25) {
        cells[i].className = "alive";
        cells[i].setAttribute('data-status', 'alive');
+       cells[i].style.backgroundColor =  getRandomColor();
     }
   }
 }
@@ -124,6 +138,7 @@ GameOfLife.prototype.clear = function() {
   for (var i=0; i<cells.length; i++) {
     cells[i].className = "dead";
     cells[i].setAttribute('data-status', 'dead');
+    cells[i].style.backgroundColor = "white";
   }
 
 }
