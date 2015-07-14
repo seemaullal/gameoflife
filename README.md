@@ -1,6 +1,6 @@
 ## A Javascript implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life). ##
 
-<img src="https://lh3.googleusercontent.com/-WbAhWRl-JGo/VaVkTXXmmEI/AAAAAAAAArM/PWLFhunCFa0/s0/gameoflife.tiff" height="300">
+<img src="https://lh3.googleusercontent.com/-WbAhWRl-JGo/VaVkTXXmmEI/AAAAAAAAArM/PWLFhunCFa0/s0/gameoflife.tiff" height="450">
 
 This version was created using vanilla Javascript, HTML, and CSS. 
 
